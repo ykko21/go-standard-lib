@@ -41,4 +41,9 @@ func t3() {
 	m["age"] = 20
 	m["married"] = false
 	fmt.Println(m)
+
+	for k, v := range m {
+		fmt.Println(k, v)
+	}
+
 }

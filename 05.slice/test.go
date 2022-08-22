@@ -10,6 +10,7 @@ func main() {
 }
 
 func t1() {
+	//s1 := []int{1,2,3,4,5}
 	var s1 []int
 	s1 = append(s1, 1)
 	s1 = append(s1, 3)
