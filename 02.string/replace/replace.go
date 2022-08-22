@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func main1() {
+func main() {
 	s := "ababcdea"
 	rep := strings.NewReplacer("a", "-", "b", "*")
 	s1 := rep.Replace(s)

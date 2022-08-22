@@ -7,7 +7,7 @@ import (
 )
 
 // func main() {
-func main1() {
+func main() {
 	fmt.Println("Hello")
 	regex, err := regexp.Compile("^[a-zA-Z0-9]+$")
 	if err != nil {

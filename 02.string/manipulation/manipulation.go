@@ -8,7 +8,7 @@ import (
 	"unicode"
 )
 
-func main1() {
+func main() {
 	t6()
 }
 

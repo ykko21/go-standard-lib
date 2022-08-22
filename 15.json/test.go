@@ -3,9 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 )
 
-type customer struct {
+type Customer struct {
 	FirstName string `json:"first_name"`
 	LastName  string `json:"last_name"`
 	//Zipcode   string   `json:"-"`
@@ -14,8 +15,38 @@ type customer struct {
 }
 
 func main() {
-	t2()
+	t3()
 }
+
+func t3() { //Read JSON,
+	data := `
+	[
+		{
+			"first_name":"Kal",
+			"last_name": "Kakao",
+			"zipcode": "10100",
+			"products": ["Radio01","Pencel01"]
+		},
+		{
+			"first_name":"Peter",
+			"last_name": "Skpe",
+			"zipcode": "20103",
+			"products": ["Cellphone1","keyboard01"]
+		}				
+	]
+	`
+	data_byte := []byte(data)
+	valid := json.Valid(data_byte)
+	if valid {
+		var custs []Customer
+		err := json.Unmarshal(data_byte, &custs)
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println(custs)
+	}
+}
+
 func t2() { //decode
 	data := []byte(`
 	 	{
@@ -29,7 +60,7 @@ func t2() { //decode
 	// Convert to Json
 	valid := json.Valid(data)
 	if valid {
-		var c customer
+		var c Customer
 		json.Unmarshal(data, &c)
 		fmt.Printf("%v\n", c)
 		fmt.Printf("%#v\n", c)
@@ -45,7 +76,7 @@ func t2() { //decode
 
 }
 func t1() { //encode
-	customers := []customer{
+	customers := []Customer{
 		{"Peter", "Kim", "12345", nil},
 		{"Juli", "Lala", "12346", []string{"Fan01", "TV01"}},
 	}

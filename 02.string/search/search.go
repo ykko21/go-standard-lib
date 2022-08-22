@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func main1() {
+func main() {
 	s := "We live in Closter in New Jersey."
 	fmt.Println(strings.Contains(s, "Closter"))
 	fmt.Println(strings.ContainsAny(s, "esz"))

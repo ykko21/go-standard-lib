@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func main1() {
+func main6() {
 	t1()
 }
 

@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func main1() {
+func main() {
 	transform := func(r rune) rune {
 		switch {
 		case r >= 'A' && r <= 'Z':
